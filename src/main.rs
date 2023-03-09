@@ -5,9 +5,8 @@ use std::time;
 use client::Client;
 
 fn connect() -> Client {
-    const DOMAINS: [&str; 2] = [
-        "jhasgd.tk:2134",
-        "oadsiuh.tk:7832"
+    const DOMAINS: [&str; 1] = [
+        "localhost:2130",
     ];
 
     const DOMAINS_LENGTH: usize = DOMAINS.len() + 1;
@@ -29,5 +28,6 @@ fn connect() -> Client {
 }
 
 fn main() {
-    let mut _cli = connect();
+    let cli = connect();
+    cli.handle_packets();
 }
